@@ -11,7 +11,22 @@ $_tax = $_GET["tax_percentage"];
 $instalments = $_GET["numberOfIntalment"];
 
 $base = 11; //Base price of policy is 11% from entered car value, except every Friday 15-20 o’clock (user time) when it is 13%
+
+//Check if today is Friday
+if (date('D') == "Fri") {
+  
+    $userTime = date('H'); //date('H:i:s'); 
+
+    //Check time if is 15-20 o’clock
+    if ($userTime >= 15 && $userTime <= 20) {
+      
+      $base = 13;
+    }
+
+}
+
 $_comiss = 17; //Commission is added to base price (17%)
+
 
 $result = new CarInsurance();
 
@@ -24,7 +39,7 @@ $get_tax = $result->percentage($base_price,$_tax);
 $total_cost = $base_price + $commission + $get_tax;
 $total_cost_instalment = 0;
 
- 
+
 }
   
 ?>
