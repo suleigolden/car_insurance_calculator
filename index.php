@@ -38,33 +38,36 @@ $total_cost_instalment = 0;
 
 
 <div class="container">
-  <form action="">
+  <form action="" name="calculateForm" onsubmit="return validateForm()">
     <div class="row">
       <div class="col-md-8">
         <h2>Car Insurance Calculator</h2>
         <div class="row">
           <div class="col-md">
-            <label for="value">Value</label>
-            <input type="text" name="value" placeholder="Estimated value of the car">
+            <label for="value">Estimated Value (EUR)</label>
+            <input type="text" name="value" placeholder="Estimated value of the car" required>
           </div>
         </div>
         <div class="row">
           <div class="col-md">
              <label for="value">Tax percentage%</label>
-            <input type="number" name="tax_percentage" placeholder="Tax percentage">
+            <input type="number" name="tax_percentage" placeholder="Tax percentage" required>
           </div>
         </div>
          <div class="row">
           <div class="col-md">
              <label for="value">Number of Instalments</label>
-             <select name="numberOfIntalment">
+             <select name="numberOfIntalment" required>
                <?php
-                for ($i=1; $i < 13; $i++) { 
+
+                    $max_instalment = 13;
+                    $min_instalment  = 1;
+                for ($min_instalment=1; $min_instalment < $max_instalment; $min_instalment++) { 
                   
-                  if ($i == 1) {
-                       echo '<option value="'.$i.'">'.$i.' Instalment</option>';
+                  if ($min_instalment == 1) {
+                       echo '<option value="'.$min_instalment.'">'.$min_instalment.' Instalment</option>';
                   }else{
-                     echo '<option value="'.$i.'">'.$i.' Instalments</option>';
+                     echo '<option value="'.$min_instalment.'">'.$min_instalment.' Instalments</option>';
                    }
                    
                 }
@@ -78,6 +81,7 @@ $total_cost_instalment = 0;
             <input type="submit" value="Submit">
           </div>
         </div>
+        <label id="errorMessage"></label>
       </div>
     </div>
   </form>
@@ -92,4 +96,5 @@ $total_cost_instalment = 0;
 
 </div>
 
+<script src="asset/js/app.js"></script>
 </body>
