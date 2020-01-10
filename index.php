@@ -1,3 +1,23 @@
+<?php
+use app\controller\CarInsurance;
+
+
+if (isset($_GET["value"]) && isset($_GET["tax_percentage"]) && isset($_GET["numberOfIntalment"])) {
+
+//assigning values to variables
+$estimated_value = $_GET["value"];
+$_tax = $_GET["tax_percentage"];
+$instalments = $_GET["numberOfIntalment"];
+
+$base = 11; //Base price of policy is 11% from entered car value, except every Friday 15-20 o’clock (user time) when it is 13%
+$_comiss = 17; //Commission is added to base price (17%)
+
+
+
+ 
+}
+  
+?>
 <!DOCTYPE html>
 <html>
 <head>
