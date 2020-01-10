@@ -1,4 +1,6 @@
-  <table>
+<div class="tablerow">
+
+<table>
     <tr>
       <th></th>
       <th>Policy</th>
@@ -82,3 +84,6 @@
 
 <hr>
   <a href="index.php">Refresh</a>
+
+
+</div>

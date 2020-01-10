@@ -55,3 +55,24 @@ input[type=submit]:hover {
   display: table;
   clear: both;
 }
+
+.tablerow:after {
+  content: "";
+  display: table;
+  clear: both;
+  background-color: #FFF;
+}
+
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  padding: 9px;
+}

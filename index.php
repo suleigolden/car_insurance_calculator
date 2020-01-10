@@ -82,7 +82,6 @@ $total_cost_instalment = 0;
     </div>
   </form>
 
-  <div class="row">
     <?php
 
       if (isset($_GET["value"]) && isset($_GET["tax_percentage"]) && isset($_GET["numberOfIntalment"])) {
@@ -90,7 +89,7 @@ $total_cost_instalment = 0;
       }
 
     ?>
-  </div>
+
 </div>
 
 </body>
