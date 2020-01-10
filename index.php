@@ -24,8 +24,6 @@ $get_tax = $result->percentage($base_price,$_tax);
 $total_cost = $base_price + $commission + $get_tax;
 $total_cost_instalment = 0;
 
-
-echo $base_price; exit();
  
 }
   
@@ -83,6 +81,16 @@ echo $base_price; exit();
       </div>
     </div>
   </form>
+
+  <div class="row">
+    <?php
+
+      if (isset($_GET["value"]) && isset($_GET["tax_percentage"]) && isset($_GET["numberOfIntalment"])) {
+          require 'app\controller\Result.php';
+      }
+
+    ?>
+  </div>
 </div>
 
 </body>
